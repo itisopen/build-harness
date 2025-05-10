@@ -3,16 +3,16 @@ blank_issues_enabled: false
 contact_links:
 
   - name: Community Slack Team
-    url: https://cloudposse.com/slack/
+    url: https://itisopen.net/slack/
     about: |-
       Please ask and answer questions here.
 
   - name: Office Hours
-    url: https://cloudposse.com/office-hours/
+    url: https://itisopen.net/office-hours/
     about: |-
       Join us every Wednesday for FREE Office Hours (lunch & learn).
 
   - name: DevOps Accelerator Program
-    url: https://cloudposse.com/accelerate/
+    url: https://itisopen.net/accelerate/
     about: |-
       Own your infrastructure in record time. We build it. You drive it. 

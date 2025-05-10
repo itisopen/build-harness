@@ -3,13 +3,12 @@ name: auto-release
 on:
   push:
     branches:
-      - main
-      - master
+      - itisopen
       - production
 
 jobs:
   auto:
-    uses: cloudposse/.github/.github/workflows/shared-auto-release.yml@main
+    uses: itisopen/.github/.github/workflows/shared-auto-release.yml@itisopen
     with:
       publish: true
     secrets: inherit

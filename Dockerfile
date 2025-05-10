@@ -1,6 +1,6 @@
 FROM golang:1.21.7-alpine3.18
 
-LABEL maintainer="Cloud Posse <hello@cloudposse.com>"
+LABEL maintainer="ITisOpen <hello@itisopen.net>"
 
 LABEL "com.github.actions.name"="Build Harness"
 LABEL "com.github.actions.description"="Run any build-harness make target"

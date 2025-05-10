@@ -2,9 +2,9 @@ export README_LINT ?= $(TMP)/README.md
 export README_FILE ?= README.md
 export README_YAML ?= README.yaml
 
-export README_TEMPLATE_REPO_ORG ?= $(shell [ -f "$(README_YAML)" ] &&  dirname $$(grep '^github_repo: *' "$(README_YAML)" | tr -d \'\" | cut -d: -f2))
+export README_TEMPLATE_REPO_ORG ?= $(shell [ -f "$(README_YAML)" ] &&  echo 'itisopen')
 export README_TEMPLATE_REPO ?= .github
-export README_TEMPLATE_REPO_REF ?= main
+export README_TEMPLATE_REPO_REF ?= itisopen
 export README_TEMPLATE_REPO_PATH ?= README.md.gotmpl
 export README_TEMPLATE_REPO_URL := https://raw.githubusercontent.com/$(README_TEMPLATE_REPO_ORG)/$(README_TEMPLATE_REPO)/$(README_TEMPLATE_REPO_REF)/$(README_TEMPLATE_REPO_PATH)
 export README_TEMPLATE_REMOTE_FILE ?= $(BUILD_HARNESS_PATH)/templates/README.md.gotmpl
@@ -13,15 +13,16 @@ export README_TEMPLATE_YAML := $(BUILD_HARNESS_PATH)/templates/$(README_YAML)
 
 # Only allow allowlisted orgs to supply the README template
 export README_ALLOWLIST_ORGS := \
-	cloudposse \
-	cloudposse-archives \
-	cloudposse-corp \
-	cloudposse-depos \
-	cloudposse-examples \
-	cloudposse-github-actions \
-	cloudposse-sandbox \
-	cloudposse-terraform-components \
-	terraform-aws-components
+	itisopen \
+	itisopen-archives \
+	itisopen-corp \
+	itisopen-depos \
+	itisopen-examples \
+	itisopen-github-actions \
+	itisopen-sandbox \
+	itisopen-terraform-components \
+	itisopen-terraform-modules \
+	itisopen-terraform-projects
 
 # Fetch the remote README.md.gotmpl every time, because we have no way of knowing if it's changed
 .PHONY: $(README_TEMPLATE_REMOTE_FILE)

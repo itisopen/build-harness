@@ -1,4 +1,4 @@
-## To get GIT_* env variables reference https://github.com/cloudposse/build-harness/blob/master/modules/git/bootstrap.Makefile
+## To get GIT_* env variables reference https://github.com/itisopen/build-harness/blob/master/modules/git/bootstrap.Makefile
 
 # Extract ticket number from branch name (e.g. feature/ch37684/add-codefresh)
 FEATURE ?= $(shell echo "$(GIT_BRANCH)" | cut -s -d'/' -f2 | tr '[:upper:]' '[:lower:]')

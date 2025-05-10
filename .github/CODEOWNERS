@@ -4,17 +4,17 @@
 # Order is important: the last matching pattern takes the most precedence
 
 # These owners will be the default owners for everything
-*                               @cloudposse/engineering @cloudposse/contributors
+*                               @itisopen/engineering @itisopen/contributors
 
 # Cloud Posse must review any changes to Makefiles
-**/Makefile                     @cloudposse/engineering
-**/Makefile.*                   @cloudposse/engineering
+**/Makefile                     @itisopen/engineering
+**/Makefile.*                   @itisopen/engineering
 
 # Cloud Posse must review any changes to GitHub actions
-.github/*                       @cloudposse/engineering
+.github/*                       @itisopen/engineering
 
 # Cloud Posse must review any changes to GitHub templates actions
-templates/.github/*             @cloudposse/engineering
-templates/terraform/.github/*   @cloudposse/engineering
-**/.gomplate.*                  @cloudposse/admins
-**/configs/gomplate.yaml        @cloudposse/admins
+templates/.github/*             @itisopen/engineering
+templates/terraform/.github/*   @itisopen/engineering
+**/.gomplate.*                  @itisopen/admins
+**/configs/gomplate.yaml        @itisopen/admins

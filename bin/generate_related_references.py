@@ -10,7 +10,7 @@ from iteration_utilities import unique_everseen
 from ruamel.yaml import YAML
 
 GH_TOKEN = os.environ["GITHUB_TOKEN"]
-GH_ORG_NAME = os.getenv("GH_ORG_NAME", "cloudposse")
+GH_ORG_NAME = os.getenv("GH_ORG_NAME", "itisopen")
 GH_SEARCH_PATTERN = os.getenv("GH_SEARCH_PATTERN", "terraform-")
 TF_MODULE_PATH = os.getenv("TF_MODULE_PATH", ".")
 TF_CONFIG_INSPECT_BINARY_PATH = os.getenv(
