@@ -14,35 +14,35 @@ license: "APACHE2"
 
 # Copyrights
 copyrights:
-  - name: "Cloud Posse, LLC"
-    url: "https://cloudposse.com"
-    year: "2016"
+  - name: "ITisOpen"
+    url: "https://itisopen.net"
+    year: "2025"
 
 # Canonical GitHub repo
-github_repo: cloudposse/build-harness
+github_repo: itisopen/build-harness
 
 # Badges to display
 badges:
   - name: "Build Status"
-    image: "https://img.shields.io/github/actions/workflow/status/cloudposse/build-harness/docker.yml?style=for-the-badge"
-    url: "https://github.com/cloudposse/build-harness/actions/workflows/docker.yml"
+    image: "https://img.shields.io/github/actions/workflow/status/itisopen/build-harness/docker.yml?style=for-the-badge"
+    url: "https://github.com/itisopen/build-harness/actions/workflows/docker.yml"
   - name: "Latest Release"
-    image: "https://img.shields.io/github/release/cloudposse/build-harness.svg?style=for-the-badge"
-    url: "https://github.com/cloudposse/build-harness/releases/latest"
+    image: "https://img.shields.io/github/release/itisopen/build-harness.svg?style=for-the-badge"
+    url: "https://github.com/itisopen/build-harness/releases/latest"
   - name: "Last Updated"
-    image: https://img.shields.io/github/last-commit/cloudposse/build-harness/master?style=for-the-badge
-    url: https://github.com/cloudposse/build-harness/commits/master/
+    image: https://img.shields.io/github/last-commit/itisopen/build-harness/master?style=for-the-badge
+    url: https://github.com/itisopen/build-harness/commits/master/
   - name: "Slack Community"
-    image: "https://slack.cloudposse.com/for-the-badge.svg"
-    url: "https://slack.cloudposse.com"
+    image: "https://slack.itisopen.com/for-the-badge.svg"
+    url: "https://slack.itisopen.net"
 
 related:
   - name: "Packages"
-    description: "Cloud Posse installer and distribution of native apps"
-    url: "https://github.com/cloudposse/packages"
+    description: "ITisOpen installer and distribution of native apps"
+    url: "https://github.com/itisopen/packages"
   - name: "Atmos"
     description: "DevOps Automation Tool"
-    url: "https://github.com/cloudposse/atmos"
+    url: "https://github.com/itisopen/atmos"
 
 # References
 references:
@@ -76,7 +76,7 @@ usage: |-
   > ```
   > 
   > The `git.io` service is a link shortener/redirector provided by GitHub, but [they no longer support it](https://github.blog/changelog/2022-04-25-git-io-deprecation/).
-  > We have therefore set up `https://cloudposse.tools/build-harness` as an alternative and are migrating
+  > We have therefore set up `https://itisopen.tools/build-harness` as an alternative and are migrating
   > all our Makefiles to use that URL instead. We encourage you to update any references you have in your
   > own code derived from our code, whether by forking one of our repos or simply following one of our examples.
   > 
@@ -85,7 +85,7 @@ usage: |-
   At the top of your `Makefile` add, the following...
 
   ```make
-  -include $(shell curl -sSL -o .build-harness "https://cloudposse.tools/build-harness"; echo .build-harness)
+  -include $(shell curl -sSL -o .build-harness "https://itisopen.tools/build-harness"; echo .build-harness)
   ```
 
   This will download a `Makefile` called `.build-harness` and include it at run time. We recommend adding the `.build-harness` file to your `.gitignore`.
@@ -111,7 +111,7 @@ usage: |-
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@master
-      - uses: cloudposse/build-harness@master
+      - uses: itisopen/build-harness@master
         with:
           entrypoint: /usr/bin/make
           args: readme/lint
@@ -126,8 +126,8 @@ examples: |-
 quickstart: |-
   Here's how to get started...
 
-  1. `git clone https://github.com/cloudposse/build-harness.git` to pull down the repository
-  2. `make init` to initialize the [`build-harness`](https://github.com/cloudposse/build-harness/)
+  1. `git clone https://github.com/itisopen/build-harness.git` to pull down the repository
+  2. `make init` to initialize the [`build-harness`](https://github.com/itisopen/build-harness/)
 
 # Other files to include in this README from the project folder
 include:
@@ -136,4 +136,6 @@ include:
   - "docs/auto-init.md"
 
 # Include contributors to this project
-contributors: []
+contributors: 
+  - name: "ITisOpen"
+    github: "itisopen"

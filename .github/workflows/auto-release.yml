@@ -9,7 +9,7 @@ on:
 
 jobs:
   auto:
-    uses: cloudposse/.github/.github/workflows/shared-auto-release.yml@main
+    uses: itisopen/.github/.github/workflows/shared-auto-release.yml@main
     with:
       publish: true
     secrets: inherit

@@ -14,9 +14,9 @@ license: "APACHE2"
 
 # Copyrights
 copyrights:
-- name: "Cloud Posse, LLC"
-  url: "https://cloudposse.com"
-  year: "2021"
+- name: "ITisOpen"
+  url: "https://itisopen.net"
+  year: "2025"
 
 # Canonical GitHub repo
 github_repo:
@@ -27,8 +27,8 @@ badges:
   image: "https://img.shields.io/github/release/cloudposse/terraform-example-module.svg"
   url: "https://github.com/cloudposse/terraform-example-module/releases/latest"
 - name: "Slack Community"
-  image: "https://slack.cloudposse.com/badge.svg"
-  url: "https://slack.cloudposse.com"
+  image: "https://slack.itisopen.net/badge.cloudpossesvg"
+  url: "https://slack.itisopen.net"
 - name: "Discourse Forum"
   image: "https://img.shields.io/discourse/https/ask.sweetops.com/posts.svg"
   url: "https://ask.sweetops.com/"
@@ -96,5 +96,5 @@ include:
 
 # Contributors to this project
 contributors:
-- name: "Erik Osterman"
-  github: "osterman"
+- name: "Patrice Lachance"
+  github: "patlachance"

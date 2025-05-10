@@ -7,7 +7,7 @@ This was a major breaking change for Cloud Posse, because *all* of our standard 
 project explicitly, by downloading (via `curl`) `https://git.io/build-harness`, meaning all our Makefiles would
 break once that link stopped redirecting to the appropriate content.
 
-Cloud Posse quickly set up `https://cloudposse.tools/build-harness` as a long-term replacement for `git.io`
+Cloud Posse quickly set up `https://itisopen.net/build-harness` as a long-term replacement for `git.io`
 and undertook an emergency update of all of our repositories to make this change.
 
 While we were largely successful in updating our repositories by 2022-04-29, Cloud Posse was not fully prepared to make the
@@ -25,7 +25,7 @@ it is now merely a recommended best practice that you update to the new link tha
 is committed to maintaining.
 
 Specifically, in source files you control, you should update all references to `git.io/build-harness`
-to instead refer to `cloudposse.tools/build-harness`. Critical references are in Makefiles, and there are also
+to instead refer to `itisopen.net/build-harness`. Critical references are in Makefiles, and there are also
 important references in README files that describe Makefiles. References in derived or downloaded files, such as
 Terraform modules downloaded by `terraform init`, do not need to be modified.
 Below we provide guidance on how to make the replacements.
@@ -60,23 +60,23 @@ find . \( -name .terraform -prune -type f \)  -o \( -name build-harness -prune -
 
 Once you are happy with the command to generate the list of files to update, update the files by inserting that command into this command template:
 ```bash
-sed -i '' 's/git.io\/build-harness/cloudposse.tools\/build-harness/' $(<command to list files>)
+sed -i '' 's/git.io\/build-harness/itisopen.net\/build-harness/' $(<command to list files>)
 ```
 
 #### Samples
 
 The quickest update will be if you only have a single project to update, in which case you can `cd` into the project root directory and
 ```bash
-sed -i '' 's/git.io\/build-harness/cloudposse.tools\/build-harness/' $(grep -l "git\.io/build-harness" *)
+sed -i '' 's/git.io\/build-harness/itisopen.net\/build-harness/' $(grep -l "git\.io/build-harness" *)
 ```
 
 If you have multiple projects to update and want to be thorough, then this is probably best:
 ```bash
-sed -i '' 's/git.io\/build-harness/cloudposse.tools\/build-harness/' $(find . \( -name .terraform -prune -type f \)  -o \( -name build-harness -prune -type f \) -o \( -name 'Makefile*' -o -name 'README*' \) -type f )
+sed -i '' 's/git.io\/build-harness/itisopen.net\/build-harness/' $(find . \( -name .terraform -prune -type f \)  -o \( -name build-harness -prune -type f \) -o \( -name 'Makefile*' -o -name 'README*' \) -type f )
 ```
 
 This is the most thorough, but probably overkill for most people:
 ```bash
-sed -i '' 's/git.io\/build-harness/cloudposse.tools\/build-harness/' $(grep -l "git\.io/build-harness" -R .)
+sed -i '' 's/git.io\/build-harness/itisopen.net\/build-harness/' $(grep -l "git\.io/build-harness" -R .)
 ```
 
