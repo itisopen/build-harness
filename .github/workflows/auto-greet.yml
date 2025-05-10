@@ -10,13 +10,13 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: |-
-          Thank you for reporting the issue! If you haven't already [joined our slack community](https://slack.sweetops.com), then we invite you to do so.
+          Thank you for reporting the issue! If you haven't already [joined our slack community](https://slack.itisopen.net), then we invite you to do so.
 
           This is a great place to get help and ask questions from our AMAZING community.  
 
           [![Slack Community](https://slack.itisopen.net/badge.svg)](https://slack.itisopen.net)
         pr-message: |-
-          Thank you for submitting this PR! If you haven't already [joined our slack community](https://slack.sweetops.com), then we invite you to do so.
+          Thank you for submitting this PR! If you haven't already [joined our slack community](https://slack.itisopen.net), then we invite you to do so.
 
           We receive an overwhelming number of contributions. By joining our slack, we'll be able to review your PR faster.
 
