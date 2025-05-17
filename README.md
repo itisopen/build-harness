@@ -51,7 +51,7 @@ It's designed to work with CI/CD systems such as GitHub Actions.
 > ```
 > 
 > The `git.io` service is a link shortener/redirector provided by GitHub, but [they no longer support it](https://github.blog/changelog/2022-04-25-git-io-deprecation/).
-> We have therefore set up `https://itisopen.tools/build-harness` as an alternative and are migrating
+> We have therefore set up `https://itisopen.net/build-harness` as an alternative and are migrating
 > all our Makefiles to use that URL instead. We encourage you to update any references you have in your
 > own code derived from our code, whether by forking one of our repos or simply following one of our examples.
 > 
@@ -60,7 +60,7 @@ It's designed to work with CI/CD systems such as GitHub Actions.
 At the top of your `Makefile` add, the following...
 
 ```make
--include $(shell curl -sSL -o .build-harness "https://itisopen.tools/build-harness"; echo .build-harness)
+-include $(shell curl -sSL -o .build-harness "https://itisopen.net/build-harness"; echo .build-harness)
 ```
 
 This will download a `Makefile` called `.build-harness` and include it at run time. We recommend adding the `.build-harness` file to your `.gitignore`.
