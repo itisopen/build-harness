@@ -51,7 +51,7 @@ It's designed to work with CI/CD systems such as GitHub Actions.
 > ```
 > 
 > The `git.io` service is a link shortener/redirector provided by GitHub, but [they no longer support it](https://github.blog/changelog/2022-04-25-git-io-deprecation/).
-> We have therefore set up `https://itisopen.net/build-harness` as an alternative and are migrating
+> We have therefore set up `https://itisopen.net/redirect/build-harness` as an alternative and are migrating
 > all our Makefiles to use that URL instead. We encourage you to update any references you have in your
 > own code derived from our code, whether by forking one of our repos or simply following one of our examples.
 > 
@@ -60,7 +60,7 @@ It's designed to work with CI/CD systems such as GitHub Actions.
 At the top of your `Makefile` add, the following...
 
 ```make
--include $(shell curl -sSL -o .build-harness "https://itisopen.net/build-harness"; echo .build-harness)
+-include $(shell curl -sSL -o .build-harness "https://itisopen.net/redirect/build-harness"; echo .build-harness)
 ```
 
 This will download a `Makefile` called `.build-harness` and include it at run time. We recommend adding the `.build-harness` file to your `.gitignore`.
@@ -265,7 +265,7 @@ Alternatively, the "auto-init" feature can automatically run the `init` logic fo
 ```make
 BUILD_HARNESS_AUTO_INIT = true
 
--include $(shell curl -sSL -o .build-harness "https://cloudposse.tools/build-harness"; echo .build-harness)
+-include $(shell curl -sSL -o .build-harness "https://itisopen.net/redirect/build-harness"; echo .build-harness)
 ```
 
 The "auto-init" feature will _also_ keep the install up-to-date. It will check the value of `BUILD_HARNESS_BRANCH`, get the commit ID, compare that to the current checkout, and update the clone if they differ. A useful side-effect is that it becomes easy to pin to versions of the `build-harness` from your own project, and let the `build-harness` update itself as you update the pin:
@@ -274,7 +274,7 @@ The "auto-init" feature will _also_ keep the install up-to-date. It will check t
 BUILD_HARNESS_AUTO_INIT = true
 BUILD_HARNESS_BRANCH = {TAG}
 
--include $(shell curl -sSL -o .build-harness "https://cloudposse.tools/build-harness"; echo .build-harness)
+-include $(shell curl -sSL -o .build-harness "https://itisopen.net/redirect/build-harness"; echo .build-harness)
 ```
 
 Now when you run `make` the project will update itself to use the version specified by the `BUILD_HARNESS_BRANCH` value:
@@ -282,7 +282,7 @@ Now when you run `make` the project will update itself to use the version specif
 ```sh
 $ make help
 Removing existing build-harness
-Cloning https://github.com/cloudposse/build-harness.git#{TAG}...
+Cloning https://github.com/itisopen/build-harness.git#{TAG}...
 Cloning into 'build-harness'...
 remote: Enumerating objects: 143, done.
 remote: Counting objects: 100% (143/143), done.
