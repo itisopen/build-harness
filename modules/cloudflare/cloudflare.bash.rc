@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Cloudflare environment setup
+export CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN:-}
+export CLOUDFLARE_ACCOUNT_ID=${CLOUDFLARE_ACCOUNT_ID:-}
+
+# Check if we have authentication set up
+if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+  echo "Cloudflare API token is set"
+else
+  echo "Warning: CLOUDFLARE_API_TOKEN is not set"
+fi
+
+if [ -n "$CLOUDFLARE_ACCOUNT_ID" ]; then
+  echo "Cloudflare account ID is set"
+else
+  echo "Warning: CLOUDFLARE_ACCOUNT_ID is not set"
+fi
+
+# Add wrangler to PATH if installed locally
+if [ -d "./node_modules/.bin" ]; then
+  export PATH="./node_modules/.bin:$PATH"
+fi

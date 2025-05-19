@@ -1,0 +1,23 @@
+WORKER_NAME ?= my-worker
+WORKER_DIR ?= ./
+WORKER_ENV ?= production
+
+.PHONY: cloudflare/workers/init cloudflare/workers/dev cloudflare/workers/publish cloudflare/workers/delete
+
+## Initialize a new Worker project
+cloudflare/workers/init:
+	$(call assert-set,WORKER_NAME)
+	@$(WRANGLER) init $(WORKER_NAME) --type=javascript
+
+## Start local development server for Worker
+cloudflare/workers/dev:
+	@cd $(WORKER_DIR) && $(WRANGLER) dev
+
+## Publish Worker to Cloudflare
+cloudflare/workers/publish:
+	@cd $(WORKER_DIR) && $(WRANGLER) publish $(if $(WORKER_ENV),--env $(WORKER_ENV),)
+
+## Delete Worker from Cloudflare
+cloudflare/workers/delete:
+	$(call assert-set,WORKER_NAME)
+	@$(WRANGLER) delete $(WORKER_NAME) $(if $(WORKER_ENV),--env $(WORKER_ENV),)

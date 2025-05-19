@@ -1,0 +1,18 @@
+.PHONY: cloudflare/auth/login cloudflare/auth/logout cloudflare/auth/whoami cloudflare/auth/check
+
+## Login to Cloudflare interactively
+cloudflare/auth/login:
+	@$(WRANGLER) login
+
+## Logout from Cloudflare
+cloudflare/auth/logout:
+	@$(WRANGLER) logout
+
+## Show current authentication status
+cloudflare/auth/whoami:
+	@$(WRANGLER) whoami
+
+## Check if authentication is valid
+cloudflare/auth/check:
+	$(call assert-set,CLOUDFLARE_API_TOKEN)
+	@$(WRANGLER) whoami

@@ -9,6 +9,43 @@ Available targets:
   chamber/install                     Install chamber
   chamber/shell                       Start a chamber shell with secrets exported to the environment
   clean                               Clean build-harness
+  cloudflare/auth/check               Check if authentication is valid
+  cloudflare/auth/login               Login to Cloudflare interactively
+  cloudflare/auth/logout              Logout from Cloudflare
+  cloudflare/auth/whoami              Show current authentication status
+  cloudflare/d1/create                Create a new D1 database
+  cloudflare/d1/delete                Delete a D1 database
+  cloudflare/d1/execute               Execute SQL on a D1 database
+  cloudflare/d1/list                  List all D1 databases
+  cloudflare/d1/migration/apply       Apply D1 migrations
+  cloudflare/d1/migration/create      Create a new D1 migration
+  cloudflare/do/delete                Delete a Durable Object
+  cloudflare/do/get                   Get information about a specific Durable Object
+  cloudflare/do/list                  List all Durable Objects
+  cloudflare/help                     Show Wrangler help
+  cloudflare/install                  Install Wrangler CLI
+  cloudflare/kv/key/delete            Delete a key from KV
+  cloudflare/kv/key/get               Get a value from KV
+  cloudflare/kv/key/put               Put a key-value pair in KV
+  cloudflare/kv/key/put/file          Put a key with file value in KV
+  cloudflare/kv/namespace/create      Create a new KV namespace
+  cloudflare/kv/namespace/delete      Delete a KV namespace
+  cloudflare/kv/namespace/list        List all KV namespaces
+  cloudflare/pages/delete             Delete Pages project from Cloudflare
+  cloudflare/pages/deploy             Deploy Pages project to Cloudflare
+  cloudflare/pages/dev                Start local development server for Pages
+  cloudflare/pages/init               Initialize a new Pages project
+  cloudflare/r2/bucket/create         Create a new R2 bucket
+  cloudflare/r2/bucket/delete         Delete an R2 bucket
+  cloudflare/r2/bucket/list           List all R2 buckets
+  cloudflare/r2/object/delete         Delete an object from R2
+  cloudflare/r2/object/download       Download a file from R2
+  cloudflare/r2/object/upload         Upload a file to R2
+  cloudflare/version                  Display Wrangler version
+  cloudflare/workers/delete           Delete Worker from Cloudflare
+  cloudflare/workers/dev              Start local development server for Worker
+  cloudflare/workers/init             Initialize a new Worker project
+  cloudflare/workers/publish          Publish Worker to Cloudflare
   codefresh/export                    DEPRECATED!!! Export codefresh additional envvars
   codefresh/notify/slack/build        Send notification from codefresh to slack using "build" template
   codefresh/notify/slack/deploy       Send notification from codefresh to slack using "deploy" template

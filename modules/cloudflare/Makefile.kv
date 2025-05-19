@@ -1,0 +1,46 @@
+KV_NAMESPACE ?= MY_NAMESPACE
+KV_KEY ?= 
+KV_VALUE ?=
+KV_FILE ?=
+
+.PHONY: cloudflare/kv/namespace/create cloudflare/kv/namespace/list cloudflare/kv/namespace/delete cloudflare/kv/key/put cloudflare/kv/key/get cloudflare/kv/key/delete
+
+## Create a new KV namespace
+cloudflare/kv/namespace/create:
+	$(call assert-set,KV_NAMESPACE)
+	@$(WRANGLER) kv:namespace create $(KV_NAMESPACE)
+
+## List all KV namespaces
+cloudflare/kv/namespace/list:
+	@$(WRANGLER) kv:namespace list
+
+## Delete a KV namespace
+cloudflare/kv/namespace/delete:
+	$(call assert-set,KV_NAMESPACE)
+	@$(WRANGLER) kv:namespace delete $(KV_NAMESPACE)
+
+## Put a key-value pair in KV
+cloudflare/kv/key/put:
+	$(call assert-set,KV_NAMESPACE)
+	$(call assert-set,KV_KEY)
+	$(call assert-set,KV_VALUE)
+	@$(WRANGLER) kv:key put --namespace-id=$(KV_NAMESPACE) $(KV_KEY) $(KV_VALUE)
+
+## Put a key with file value in KV
+cloudflare/kv/key/put/file:
+	$(call assert-set,KV_NAMESPACE)
+	$(call assert-set,KV_KEY)
+	$(call assert-set,KV_FILE)
+	@$(WRANGLER) kv:key put --namespace-id=$(KV_NAMESPACE) $(KV_KEY) --path=$(KV_FILE)
+
+## Get a value from KV
+cloudflare/kv/key/get:
+	$(call assert-set,KV_NAMESPACE)
+	$(call assert-set,KV_KEY)
+	@$(WRANGLER) kv:key get --namespace-id=$(KV_NAMESPACE) $(KV_KEY)
+
+## Delete a key from KV
+cloudflare/kv/key/delete:
+	$(call assert-set,KV_NAMESPACE)
+	$(call assert-set,KV_KEY)
+	@$(WRANGLER) kv:key delete --namespace-id=$(KV_NAMESPACE) $(KV_KEY)

@@ -1,6 +1,7 @@
 modules/aws: modules/aws/**
 modules/bash: modules/bash/**
 modules/chamber: modules/chamber/**
+modules/cloudflare: modules/cloudflare/**
 modules/codefresh: modules/codefresh/**
 modules/completion: modules/completion/**
 modules/compose: modules/compose/**

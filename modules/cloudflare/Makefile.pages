@@ -1,0 +1,25 @@
+PAGES_PROJECT ?= my-project
+PAGES_DIR ?= ./
+PAGES_BUILD_DIR ?= dist
+PAGES_ENV ?= production
+
+.PHONY: cloudflare/pages/init cloudflare/pages/dev cloudflare/pages/deploy cloudflare/pages/delete
+
+## Initialize a new Pages project
+cloudflare/pages/init:
+	$(call assert-set,PAGES_PROJECT)
+	@$(WRANGLER) pages project create $(PAGES_PROJECT)
+
+## Start local development server for Pages
+cloudflare/pages/dev:
+	@cd $(PAGES_DIR) && $(WRANGLER) pages dev $(PAGES_BUILD_DIR)
+
+## Deploy Pages project to Cloudflare
+cloudflare/pages/deploy:
+	$(call assert-set,PAGES_PROJECT)
+	@cd $(PAGES_DIR) && $(WRANGLER) pages deploy $(PAGES_BUILD_DIR) --project-name=$(PAGES_PROJECT) $(if $(PAGES_ENV),--env=$(PAGES_ENV),)
+
+## Delete Pages project from Cloudflare
+cloudflare/pages/delete:
+	$(call assert-set,PAGES_PROJECT)
+	@$(WRANGLER) pages project delete $(PAGES_PROJECT)

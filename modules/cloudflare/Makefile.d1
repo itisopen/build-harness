@@ -1,0 +1,36 @@
+D1_DATABASE ?= my-database
+D1_MIGRATION ?= 
+D1_SQL_FILE ?=
+
+.PHONY: cloudflare/d1/create cloudflare/d1/list cloudflare/d1/delete cloudflare/d1/execute cloudflare/d1/migration/create cloudflare/d1/migration/apply
+
+## Create a new D1 database
+cloudflare/d1/create:
+	$(call assert-set,D1_DATABASE)
+	@$(WRANGLER) d1 create $(D1_DATABASE)
+
+## List all D1 databases
+cloudflare/d1/list:
+	@$(WRANGLER) d1 list
+
+## Delete a D1 database
+cloudflare/d1/delete:
+	$(call assert-set,D1_DATABASE)
+	@$(WRANGLER) d1 delete $(D1_DATABASE)
+
+## Execute SQL on a D1 database
+cloudflare/d1/execute:
+	$(call assert-set,D1_DATABASE)
+	$(call assert-set,D1_SQL_FILE)
+	@$(WRANGLER) d1 execute $(D1_DATABASE) --file=$(D1_SQL_FILE)
+
+## Create a new D1 migration
+cloudflare/d1/migration/create:
+	$(call assert-set,D1_DATABASE)
+	$(call assert-set,D1_MIGRATION)
+	@$(WRANGLER) d1 migration create $(D1_DATABASE) $(D1_MIGRATION)
+
+## Apply D1 migrations
+cloudflare/d1/migration/apply:
+	$(call assert-set,D1_DATABASE)
+	@$(WRANGLER) d1 migrations apply $(D1_DATABASE)
