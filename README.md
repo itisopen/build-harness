@@ -3,7 +3,7 @@
 <!-- markdownlint-disable -->
 <a href="https://itisopen.net/homepage"><img src="https://github.com/itisopen/build-harness/blob/itisopen/.github/banner.png?raw=true" alt="Project Banner"/></a><br/>
     <p align="right">
-<a href="https://github.com/itisopen/build-harness/actions/workflows/docker.yml"><img src="https://img.shields.io/github/actions/workflow/status/itisopen/build-harness/docker.yml?style=for-the-badge" alt="Build Status"/></a><a href="https://github.com/itisopen/build-harness/releases/latest"><img src="https://img.shields.io/github/release/itisopen/build-harness.svg?style=for-the-badge" alt="Latest Release"/></a><a href="https://github.com/itisopen/build-harness/commits/master/"><img src="https://img.shields.io/github/last-commit/itisopen/build-harness/master?style=for-the-badge" alt="Last Updated"/></a><a href="https://slack.itisopen.net"><img src="https://slack.itisopen.com/for-the-badge.svg" alt="Slack Community"/></a></p>
+<a href="https://github.com/itisopen/build-harness/actions/workflows/docker.yml"><img src="https://img.shields.io/github/actions/workflow/status/itisopen/build-harness/docker.yml?style=for-the-badge" alt="Build Status"/></a><a href="https://github.com/itisopen/build-harness/releases/latest"><img src="https://img.shields.io/github/release/itisopen/build-harness.svg?style=for-the-badge" alt="Latest Release"/></a><a href="https://github.com/itisopen/build-harness/commits/master/"><img src="https://img.shields.io/github/last-commit/itisopen/build-harness/master?style=for-the-badge" alt="Last Updated"/></a><a href="https://slack.itisopen.net"><img src="https://slack.itisopen.net/for-the-badge.svg" alt="Slack Community"/></a></p>
 <!-- markdownlint-restore -->
 
 <!--

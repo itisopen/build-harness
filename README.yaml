@@ -33,7 +33,7 @@ badges:
     image: https://img.shields.io/github/last-commit/itisopen/build-harness/master?style=for-the-badge
     url: https://github.com/itisopen/build-harness/commits/master/
   - name: "Slack Community"
-    image: "https://slack.itisopen.com/for-the-badge.svg"
+    image: "https://slack.itisopen.net/for-the-badge.svg"
     url: "https://slack.itisopen.net"
 
 related:
